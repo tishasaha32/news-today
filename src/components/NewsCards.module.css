@@ -1,0 +1,12 @@
+
+.newsCards{
+    display: flex;
+    gap: 1rem; 
+    width: 100vw;
+    overflow-x: scroll;
+    padding: 1rem;
+}
+.newsImage{
+    width: 70%;
+    height: 75%;
+}
