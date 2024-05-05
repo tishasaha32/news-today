@@ -1,0 +1,20 @@
+.categoryContainer{
+    display: flex;
+    gap: 1rem;
+    width: 100vw;
+    overflow-x: scroll;
+    padding: 1rem;
+}
+.categoryContainer::-webkit-scrollbar{
+    display: none;
+}
+.categoryText{
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.activeCategoryText{
+    white-space: nowrap;
+    color: #494ba1;
+    font-weight: bold;
+}
