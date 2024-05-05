@@ -25,10 +25,6 @@ function Header() {
       ) : (
         <IoMoon onClick={() => handleDarkMode()} className={styles.modeIcon} />
       )}
-      {/* <label class={styles.darkModeButton} onClick={() => handleDarkMode()}>
-        <input type="checkbox" />
-        <span class={styles.slider}></span>
-      </label> */}
     </div>
   );
 }

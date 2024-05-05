@@ -1,0 +1,27 @@
+.storiesContainer{
+    display: flex;
+    gap: 1rem;
+    width: 100vw;
+    overflow-x: scroll;
+    padding: 1rem;
+}
+.storiesContainer::-webkit-scrollbar{
+    display: none;
+}
+
+.discoverText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #494ba1;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+.person{
+    width: 4rem;
+    border-radius: 50%;
+}
