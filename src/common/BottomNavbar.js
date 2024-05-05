@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { CiHome } from "react-icons/ci";
 import { IoMdHome } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
@@ -10,9 +10,12 @@ import { FaBookmark } from "react-icons/fa";
 
 import styles from "./BottomNavbar.module.css";
 import { Link } from "react-router-dom";
+import { DarkModeContext } from "../context/darkmodeContext";
+
 function BottomNavbar({ activePage }) {
+  const { darkMode } = useContext(DarkModeContext);
   return (
-    <div className={styles.navbar}>
+    <div className={darkMode ? styles.darkmodeNavbar : styles.navbar}>
       <Link to="/" style={{ textDecoration: "none" }}>
         {activePage === "Home" ? (
           <div className={styles.activeNavbarElements}>

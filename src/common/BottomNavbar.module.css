@@ -8,13 +8,28 @@
     position: fixed;
     z-index: 100;
     padding: 10px;
+    background-color: #dad9d9;
+    /* border-radius: 10px 10px 0px 0px; */
+}
+.darkmodeNavbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    z-index: 100;
+    padding: 10px;
+    background-color: white;
+    /* border-radius: 10px 10px 0px 0px; */
+
 }
 .navbarElements{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4px;
-    color: #c5c5c5
+    color: black
 }
 .activeNavbarElements{
     display: flex;
