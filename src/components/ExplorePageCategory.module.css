@@ -1,0 +1,39 @@
+.categoriesContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 0.8rem;
+}
+.categoryContainer{
+    width: 11.5rem;
+    height: 13rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #a7a7a7;
+    border-radius: 10px;
+}
+.categoryImg{ 
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+}
+.categoryAndExploreButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.category{
+    white-space: nowrap;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.exploreButton{
+    padding: 2px 6px;
+    border: none;
+    background-color: #4C71F0;
+    color: white;
+    border-radius: 5px;
+}
