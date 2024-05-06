@@ -1,0 +1,13 @@
+.headlineContainer{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.circle{
+    color: #494ba1;
+    font-size: 2.5rem;
+}
+.headlineText{
+    font-size: 0.8rem;
+    font-weight: bold;
+}
