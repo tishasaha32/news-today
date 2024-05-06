@@ -7,9 +7,7 @@ function HeaderTitle() {
     <div className={styles.headlineContainer}>
       <VscCircleFilled className={styles.circle} />
       <div className={styles.headlineText}>
-        <p>
-          NEWS<br></br>TODAY
-        </p>
+        <p>NEWS TODAY</p>
       </div>
     </div>
   );

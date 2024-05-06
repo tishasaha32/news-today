@@ -8,7 +8,6 @@
 .storiesContainer::-webkit-scrollbar{
     display: none;
 }
-
 .discoverText{
     display: flex;
     align-items: center;
@@ -16,8 +15,8 @@
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    background-color: #494ba1;
     color: white;
+    background-color: #4C71F0;
     font-size: 0.7rem;
     font-weight: bold;
 }
