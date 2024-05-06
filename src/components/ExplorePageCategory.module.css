@@ -1,19 +1,25 @@
 .header{
-    padding: 1rem;
+    padding: 1rem ;
 }
 .categoriesContainer{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
-    margin: 0.8rem;
+    margin:0 0.8rem ;
 }
-.categoryContainer{
-    width: 11.5rem;
-    height: 13rem;
+.categoryContainer{ 
     display: grid;
     align-items: center;
     justify-content: center;
     background-color: white;
+    border: 1px solid #a7a7a7;
+    border-radius: 10px;
+}
+.darkmodeCategoryContainer{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #ced9ff;
     border: 1px solid #a7a7a7;
     border-radius: 10px;
 }

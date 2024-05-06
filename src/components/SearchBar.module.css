@@ -1,0 +1,21 @@
+.searchContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.searchBar{
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 1.2rem;
+    padding: 10px;
+    padding-left: 2.5rem;
+    outline: none;    
+    border: none;
+    background-color: #ebebeb;
+}
+.searchIcon{
+    position: absolute;
+    left: 2rem;
+    color: black;
+}

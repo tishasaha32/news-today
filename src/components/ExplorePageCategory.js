@@ -1,9 +1,10 @@
-import React from "react";
-import business from "../assets/category/business.jpg";
-import entertainment from "../assets/category/entertainment.jpg";
-import sports from "../assets/category/sports.jpg";
-import technology from "../assets/category/technology.jpg";
+import React, { useContext } from "react";
+import business from "../assets/category/business.png";
+import entertainment from "../assets/category/entertainment.png";
+import sports from "../assets/category/sports.png";
+import technology from "../assets/category/technology.png";
 import styles from "./ExplorePageCategory.module.css";
+import { DarkModeContext } from "../context/darkmodeContext";
 
 function ExplorePageCategory() {
   const categories = [
@@ -28,12 +29,21 @@ function ExplorePageCategory() {
       image: technology,
     },
   ];
+
+  const { darkMode } = useContext(DarkModeContext);
   return (
     <div>
       <h3 className={styles.header}>Explore by Category</h3>
       <div className={styles.categoriesContainer}>
         {categories.map((category) => (
-          <div className={styles.categoryContainer} key={category.id}>
+          <div
+            className={
+              darkMode
+                ? styles.darkmodeCategoryContainer
+                : styles.categoryContainer
+            }
+            key={category.id}
+          >
             <img src={category.image} className={styles.categoryImg} />
             <div className={styles.categoryAndExploreButton}>
               <p className={styles.category}>{category.name}</p>
