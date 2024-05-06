@@ -1,3 +1,6 @@
+.header{
+    padding: 1rem;
+}
 .categoriesContainer{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -29,6 +32,7 @@
     white-space: nowrap;
     font-size: 0.8rem;
     font-weight: bold;
+    color: black;
 }
 .exploreButton{
     padding: 2px 6px;
