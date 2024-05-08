@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import useNews from "../hooks/useNews";
 import styles from "./NewsCards.module.css";
 import HeaderTitle from "../common/HeaderTitle";
@@ -6,9 +6,6 @@ import { CiBookmark } from "react-icons/ci";
 
 function NewsCards() {
   const { news } = useNews({ category: "worldNews" });
-  useEffect(() => {
-    console.log(news);
-  }, [news]);
   return (
     <div>
       <div className={styles.newsCards}>
