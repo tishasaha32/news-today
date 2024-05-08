@@ -5,7 +5,6 @@ function useNews({ category }) {
   const [news, setNews] = useState([]);
   useEffect(() => {
     axios.get(`http://localhost:8000/${category}`).then((response) => {
-      console.log(category);
       setNews(response.data);
     });
   }, [category]);

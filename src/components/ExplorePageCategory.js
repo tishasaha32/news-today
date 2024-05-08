@@ -5,6 +5,7 @@ import sports from "../assets/category/sports.png";
 import technology from "../assets/category/technology.png";
 import styles from "./ExplorePageCategory.module.css";
 import { DarkModeContext } from "../context/darkmodeContext";
+import { Link } from "react-router-dom";
 
 function ExplorePageCategory() {
   const categories = [
@@ -36,20 +37,26 @@ function ExplorePageCategory() {
       <h3 className={styles.header}>Explore by Category</h3>
       <div className={styles.categoriesContainer}>
         {categories.map((category) => (
-          <div
-            className={
-              darkMode
-                ? styles.darkmodeCategoryContainer
-                : styles.categoryContainer
-            }
+          <Link
+            to={`/news/${category.name.toLowerCase()}`}
             key={category.id}
+            style={{ textDecoration: "none" }}
           >
-            <img src={category.image} className={styles.categoryImg} />
-            <div className={styles.categoryAndExploreButton}>
-              <p className={styles.category}>{category.name}</p>
-              <button className={styles.exploreButton}>Explore</button>
+            <div
+              className={
+                darkMode
+                  ? styles.darkmodeCategoryContainer
+                  : styles.categoryContainer
+              }
+              key={category.id}
+            >
+              <img src={category.image} className={styles.categoryImg} />
+              <div className={styles.categoryAndExploreButton}>
+                <p className={styles.category}>{category.name}</p>
+                <button className={styles.exploreButton}>Explore</button>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

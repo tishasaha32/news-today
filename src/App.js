@@ -5,15 +5,11 @@ import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import Trending from "./pages/Trending";
 import Saved from "./pages/Saved";
+import NewsCategory from "./pages/NewsCategory";
 
 import { DarkModeContext } from "./context/darkmodeContext";
 
 function App() {
-  // const apiUrl =
-  //   "https://newsapi.org/v2/everything?q=apple&from=2024-04-29&to=2024-04-29&sortBy=popularity&apiKey=447a047dc9714b7487c71828a41f61d2";
-
-  // const { articles, loading, error } = useNews(apiUrl);
-
   const { darkMode } = useContext(DarkModeContext);
   return (
     <div className={darkMode ? "darkModeApp" : "lightModeApp"}>
@@ -22,6 +18,7 @@ function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/trending" element={<Trending />} />
         <Route path="/saved" element={<Saved />} />
+        <Route path="/news/:category" element={<NewsCategory />} />
       </Routes>
     </div>
   );
