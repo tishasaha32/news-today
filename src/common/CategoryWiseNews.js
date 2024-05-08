@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CiBookmark } from "react-icons/ci";
 import styles from "./CategoryWiseNews.module.css";
 import useNews from "../hooks/useNews";
+import { SaveContext } from "../context/saveContext";
 
 function CategoryWiseNews({ category }) {
   const { news } = useNews({ category });
+  const { handleSave } = useContext(SaveContext);
   return (
     <div className={styles.newsCards}>
       {news.map((item) => {
@@ -14,7 +16,10 @@ function CategoryWiseNews({ category }) {
             <div className={styles.newsDetailsContainer}>
               <div className={styles.newsTitleContainer}>
                 <p className={styles.newsTitle}>{item.headline}</p>
-                <CiBookmark className={styles.saveIcon} />
+                <CiBookmark
+                  className={styles.saveIcon}
+                  onClick={() => handleSave(item)}
+                />
               </div>
               <p className={styles.newsAuthorAndDate}>
                 by {item.author} |{" "}

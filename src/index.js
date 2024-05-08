@@ -4,13 +4,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { DarkModeContextProvider } from "./context/darkmodeContext";
+import { SaveContextProvider } from "./context/saveContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <DarkModeContextProvider>
-        <App />
+        <SaveContextProvider>
+          <App />
+        </SaveContextProvider>
       </DarkModeContextProvider>
     </BrowserRouter>
   </React.StrictMode>
