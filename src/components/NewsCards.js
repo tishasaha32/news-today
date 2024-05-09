@@ -4,6 +4,7 @@ import styles from "./NewsCards.module.css";
 import { SaveContext } from "../context/saveContext";
 import HeaderTitle from "../common/HeaderTitle";
 import { CiBookmark } from "react-icons/ci";
+import { FaBookmark } from "react-icons/fa";
 
 function NewsCards() {
   const { news } = useNews({ category: "worldNews" });
@@ -17,10 +18,18 @@ function NewsCards() {
               <img src={item.image} className={styles.newsImage} />
               <div className={styles.overlay}></div>
               <div className={styles.saveIconContainer}>
-                <CiBookmark
-                  className={styles.saveIcon}
-                  onClick={() => handleSave(item)}
-                />
+                {item.saved && (
+                  <FaBookmark
+                    className={styles.savedIcon}
+                    onClick={() => handleSave(item)}
+                  />
+                )}
+                {!item.saved && (
+                  <CiBookmark
+                    className={styles.saveIcon}
+                    onClick={() => handleSave(item)}
+                  />
+                )}
               </div>
               <h2 className={styles.newsTitle}>{item.headline}</h2>
               <div className={styles.headerTitle}>

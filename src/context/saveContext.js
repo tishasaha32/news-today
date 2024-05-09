@@ -17,10 +17,13 @@ export const SaveContextProvider = ({ children }) => {
     let updatedSavedNews;
     if (isAlreadySaved) {
       updatedSavedNews = savedNews.filter((item) => item.id !== news.id);
+      news.saved = false;
     } else {
       updatedSavedNews = [...savedNews, news];
+      news.saved = true;
     }
     setSavedNews(updatedSavedNews);
+
     localStorage.setItem("savedNews", JSON.stringify(updatedSavedNews));
   };
 
