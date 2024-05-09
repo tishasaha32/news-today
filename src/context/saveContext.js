@@ -1,10 +1,10 @@
+import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
 export const SaveContext = createContext();
 
 export const SaveContextProvider = ({ children }) => {
   const [savedNews, setSavedNews] = useState([]);
-
   useEffect(() => {
     const saved = localStorage.getItem("savedNews");
     if (saved) {
@@ -12,16 +12,22 @@ export const SaveContextProvider = ({ children }) => {
     }
   }, []);
 
-  const handleSave = (news) => {
-    const isAlreadySaved = savedNews.some((item) => item.id === news.id);
+  const handleSave = (item) => {
+    const isAlreadySaved = savedNews.some((saved) => saved.id === item.id);
     let updatedSavedNews;
     if (isAlreadySaved) {
-      updatedSavedNews = savedNews.filter((item) => item.id !== news.id);
-      news.saved = false;
+      updatedSavedNews = savedNews.filter((saved) => saved.id !== item.id);
     } else {
-      updatedSavedNews = [...savedNews, news];
-      news.saved = true;
+      updatedSavedNews = [...savedNews, item];
     }
+
+    // useEffect(() => {
+    //   axios
+    //     .patch(`http://localhost:8000/${item.section}`, item)
+    //     .then((response) => {
+    //       console.log(response.data);
+    //     });
+    // });
     setSavedNews(updatedSavedNews);
 
     localStorage.setItem("savedNews", JSON.stringify(updatedSavedNews));
