@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import styles from "./TrendingSlider.module.css";
+import { Link } from "react-router-dom";
 
 const TrendingSlider = ({ news }) => (
   <Swiper
@@ -16,7 +17,9 @@ const TrendingSlider = ({ news }) => (
         <p className={styles.newsTitle}>{item.headline}:</p>
         <p className={styles.newsBody}>
           {item.body.slice(0, 350)}...
-          <span className={styles.readMore}>Read More</span>
+          <Link to={`/news/${item.id}`}>
+            <span className={styles.readMore}>Read More</span>
+          </Link>
         </p>
       </SwiperSlide>
     ))}

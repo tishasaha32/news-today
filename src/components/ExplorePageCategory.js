@@ -38,7 +38,7 @@ function ExplorePageCategory() {
       <div className={styles.categoriesContainer}>
         {categories.map((category) => (
           <Link
-            to={`/news/${category.name.toLowerCase()}`}
+            to={`/category/${category.name.toLowerCase()}`}
             key={category.id}
             style={{ textDecoration: "none" }}
           >
@@ -48,7 +48,6 @@ function ExplorePageCategory() {
                   ? styles.darkmodeCategoryContainer
                   : styles.categoryContainer
               }
-              key={category.id}
             >
               <img src={category.image} className={styles.categoryImg} />
               <div className={styles.categoryAndExploreButton}>

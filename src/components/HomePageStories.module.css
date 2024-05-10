@@ -23,4 +23,7 @@
 .person{
     width: 4rem;
     border-radius: 50%;
+    /* border: 2px solid transparent;
+    border-image: linear-gradient(to right, pink, blue);
+    border-image-slice: 1;  */
 }

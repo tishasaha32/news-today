@@ -6,7 +6,7 @@ import Explore from "./pages/Explore";
 import Trending from "./pages/Trending";
 import Saved from "./pages/Saved";
 import NewsCategory from "./pages/NewsCategory";
-
+import News from "./pages/News";
 import { DarkModeContext } from "./context/darkmodeContext";
 
 function App() {
@@ -18,7 +18,8 @@ function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/trending" element={<Trending />} />
         <Route path="/saved" element={<Saved />} />
-        <Route path="/news/:category" element={<NewsCategory />} />
+        <Route path="/category/:category" element={<NewsCategory />} />
+        <Route path="/news/:id" element={<News />} />
       </Routes>
     </div>
   );
