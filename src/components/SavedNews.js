@@ -12,7 +12,7 @@ function SavedNews() {
           <Link
             to={`/news/${item.id}`}
             key={item.id}
-            style={{ textDecoration: "none" }}
+            style={{ textDecoration: "none", color: "inherit" }}
           >
             <div className={styles.newsCard}>
               <div className={styles.newsImageContainer}>
