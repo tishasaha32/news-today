@@ -15,8 +15,12 @@ function NewsCards() {
       <div className={styles.newsCards}>
         {news.map((item) => {
           return (
-            <Link to={`/news/${item.id}`} style={{ textDecoration: "none" }}>
-              <div className={styles.newsCard} key={item.id}>
+            <Link
+              to={`/news/${item.id}`}
+              key={item.id}
+              style={{ textDecoration: "none" }}
+            >
+              <div className={styles.newsCard}>
                 <img src={item.image} className={styles.newsImage} />
                 <div className={styles.overlay}></div>
                 <div className={styles.saveIconContainer}>
