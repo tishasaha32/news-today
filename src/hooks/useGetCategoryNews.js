@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function useNews({ category }) {
-  const [news, setNews] = useState([]);
+function useGetCategoryNews({ category }) {
+  const [categoryNews, setCategoryNews] = useState([]);
   useEffect(() => {
     axios.get(`http://localhost:8000/news`).then((response) => {
       const filteredNews = response.data.filter(
         (item) => item.section === category
       );
-      setNews(filteredNews);
+      setCategoryNews(filteredNews);
     });
   }, [category]);
-  return { news, setNews };
+  return { categoryNews, setCategoryNews };
 }
 
-export default useNews;
+export default useGetCategoryNews;

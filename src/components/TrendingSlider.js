@@ -5,13 +5,13 @@ import "swiper/css/pagination";
 import styles from "./TrendingSlider.module.css";
 import { Link } from "react-router-dom";
 
-const TrendingSlider = ({ news }) => (
+const TrendingSlider = ({ categoryNews }) => (
   <Swiper
     direction="vertical"
     pagination={{ clickable: true }}
     className={styles.verticalSwiper}
   >
-    {news.map((item) => (
+    {categoryNews.map((item) => (
       <SwiperSlide key={item.id}>
         <img src={item.image} className={styles.newsImage} />
         <p className={styles.newsTitle}>{item.headline}:</p>

@@ -1,0 +1,6 @@
+.newsImage{
+    width: 100vw;
+    height: 40vh;
+    object-fit: contain;
+    /* object-position: center top; */
+}

@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import { CiBookmark } from "react-icons/ci";
 import styles from "./CategoryWiseNews.module.css";
-import useNews from "../hooks/useNews";
+import useGetCategoryNews from "../hooks/useGetCategoryNews";
 import { SaveContext } from "../context/saveContext";
 import { Link } from "react-router-dom";
 
 function CategoryWiseNews({ category }) {
-  const { news } = useNews({ category });
+  const { categoryNews } = useGetCategoryNews({ category });
   const { handleSave } = useContext(SaveContext);
   return (
     <div className={styles.newsCards}>
-      {news.map((item) => {
+      {categoryNews.map((item) => {
         return (
           <Link to={`/news/${item.id}`} style={{ textDecoration: "none" }}>
             <div key={item.id} className={styles.newsCard}>

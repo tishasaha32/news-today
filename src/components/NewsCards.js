@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import useNews from "../hooks/useNews";
+import useGetCategoryNews from "../hooks/useGetCategoryNews";
 import styles from "./NewsCards.module.css";
 import { SaveContext } from "../context/saveContext";
 import HeaderTitle from "../common/HeaderTitle";
@@ -8,12 +8,12 @@ import { Link } from "react-router-dom";
 // import { FaBookmark } from "react-icons/fa";
 
 function NewsCards() {
-  const { news } = useNews({ category: "worldNews" });
+  const { categoryNews } = useGetCategoryNews({ category: "worldNews" });
   const { handleSave } = useContext(SaveContext);
   return (
     <div>
       <div className={styles.newsCards}>
-        {news.map((item) => {
+        {categoryNews.map((item) => {
           return (
             <Link
               to={`/news/${item.id}`}
