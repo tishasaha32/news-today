@@ -1,15 +1,15 @@
 import React from "react";
-import useGetCategoryNews from "../hooks/useGetCategoryNews";
 import Header from "../common/Header";
 import BottomNavbar from "../common/BottomNavbar";
 import TrendingSlider from "../components/TrendingSlider";
+import useGetTrendingNews from "../hooks/useGetTrendingNews";
 
 function Trending() {
-  const { categoryNews } = useGetCategoryNews({ category: "trending" });
+  const { trendingNews } = useGetTrendingNews();
   return (
     <div>
       <Header />
-      <TrendingSlider categoryNews={categoryNews} />
+      <TrendingSlider trendingNews={trendingNews} />
       <BottomNavbar activePage="Trending" />
     </div>
   );

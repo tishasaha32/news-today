@@ -1,5 +1,6 @@
 .searchContainer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -17,5 +18,34 @@
 .searchIcon{
     position: absolute;
     left: 2rem;
+    color: black;
+}
+.searchResults{
+    position: absolute;
+    top: 5vh;
+    width: 95vw;
+    overflow-y: scroll;
+    background-color: white;
+    border: 1px solid #ebebeb;
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 1rem;
+}
+.resultItem{
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ebebeb;
+}
+.newsImage{
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+}
+.newsTitle{
     color: black;
 }
