@@ -24,6 +24,8 @@
     position: absolute;
     top: 5vh;
     width: 95vw;
+    max-height: 70vh;
+    height: object-fit;
     overflow-y: scroll;
     background-color: white;
     border: 1px solid #ebebeb;
