@@ -11,7 +11,7 @@ function Home() {
       <Header />
       <HomePageStories />
       <HomePageCategory />
-      <NewsCards />
+      {/* <NewsCards /> */}
       <BottomNavbar activePage="Home" />
     </div>
   );

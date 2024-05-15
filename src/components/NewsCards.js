@@ -7,8 +7,7 @@ import { CiBookmark } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { FaBookmark } from "react-icons/fa";
 
-function NewsCards() {
-  const { categoryNews } = useGetCategoryNews({ category: "worldNews" });
+function NewsCards({ categoryNews }) {
   const { handleSave } = useContext(SaveContext);
   const handleSaveClick = (event, item) => {
     event.preventDefault();
