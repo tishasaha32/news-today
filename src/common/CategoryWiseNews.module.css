@@ -16,6 +16,7 @@
     border: none;
     border-radius: 1rem;
     background-color: #ededed;
+    position: relative;
 }
 .newsImage{
     width: 88vw;
@@ -37,12 +38,29 @@
     font-size: 1rem;
     font-weight: bolder;
 }
-.saveIcon{
-    background-color: #4c71f0;
-    font-size: 1.8rem;
-    color: white;
+.saveIconContainer{
+    background-color: #4C71F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
     border-radius: 50%;
-    padding: 5px
+}
+.savedIconContainer{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+.savedIcon{
+    color: #4C71F0;
+    font-size: 1rem;
+}
+.saveIcon{
+    color: white;
+    font-size: 1.2rem;
 }
 .newsAuthorAndDate{
     font-size: 0.8rem;
