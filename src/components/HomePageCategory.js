@@ -18,8 +18,8 @@ function HomePageCategory() {
   if (selectedCategory === "Good News") {
     category = "goodNews";
   }
-  if (selectedCategory === "Fact Check") {
-    category = "factCheck";
+  if (selectedCategory === "USA News") {
+    category = "usaNews";
   }
   if (selectedCategory === "India News") {
     category = "indiaNews";
@@ -30,7 +30,7 @@ function HomePageCategory() {
     "Economic",
     "Local News",
     "Good News",
-    "Fact Check",
+    "USA News",
     "India News",
   ];
   return (
