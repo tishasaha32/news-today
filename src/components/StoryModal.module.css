@@ -1,0 +1,65 @@
+.storyContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); 
+    z-index: 100;
+}
+.storyModal{
+    position: relative;
+}
+.timer{
+    position: absolute;
+    animation: linear infinite;
+    animation-name: run;
+    /* animation-duration: 10s; */
+}
+@keyframes run {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 100vw;
+    }
+}
+.line{
+    position: absolute;
+    width: 100vw;
+    height:3px;
+    border-color: #4C71F0;
+    color: #4C71F0;
+    background-color: #4C71F0;
+    z-index: 10;
+}
+.storyImage{
+    width: 100vw;
+    height: 45vh;
+    object-fit: cover;
+}
+.closeIcon{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    z-index: 10;
+}
+.overlay{
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.5); 
+    z-index: 1;
+}
+.storyBody{
+    color: white;
+    position: absolute;
+    z-index: 10;
+    padding: 1rem;
+}
