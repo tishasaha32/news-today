@@ -8,12 +8,16 @@ import Saved from "./pages/Saved";
 import NewsCategory from "./pages/NewsCategory";
 import News from "./pages/News";
 import { DarkModeContext } from "./context/darkmodeContext";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
   return (
     <div className={darkMode ? "darkModeApp" : "lightModeApp"}>
       <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/trending" element={<Trending />} />
