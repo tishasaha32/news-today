@@ -25,15 +25,23 @@ function Login() {
         <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
           <button className={styles.loginButton}>LOGIN</button>
         </Link>
-        <p>
-          Don't have an account?
+        <div className={styles.forgotPasswordAndSignUpContainer}>
           <Link
-            to="/register"
+            to="/resetPassword"
             style={{ textDecoration: "none", color: "inherit" }}
           >
-            <span className={styles.signUpLink}> SIGN UP</span>
+            <p className={styles.forgotPassword}>Forgot Password?</p>
           </Link>
-        </p>
+          <p>
+            Don't have an account?
+            <Link
+              to="/register"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <span className={styles.signUpLink}> SIGN UP</span>
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

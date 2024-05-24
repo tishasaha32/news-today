@@ -10,6 +10,7 @@ import News from "./pages/News";
 import { DarkModeContext } from "./context/darkmodeContext";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/trending" element={<Trending />} />
