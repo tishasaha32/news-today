@@ -2,44 +2,18 @@ import React, { useState } from "react";
 import styles from "./Login.module.css";
 import lightmodeLogo from "../assets/logo/lightmodeLogo.png";
 import { Link } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth, db } from "../components/firebase";
-import { getDocs, collection, query, where } from "firebase/firestore";
-import { toast } from "react-toastify";
+import useHandleLogin from "../hooks/useHandleLogin";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const checkEmailExists = async (email) => {
-    try {
-      const q = query(collection(db, "users"), where("email", "==", email));
-      const querySnapshot = await getDocs(q);
-      return !querySnapshot.empty;
-    } catch (error) {
-      console.error("Error checking email existence:", error);
-      throw error;
-    }
-  };
+  const handleLogin = useHandleLogin();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    try {
-      const emailExists = await checkEmailExists(email);
-      if (!emailExists) {
-        toast.error("Email does not exist");
-        return;
-      }
-      await signInWithEmailAndPassword(auth, email, password);
-      toast.success("Login Successful");
-      setTimeout(() => {
-        window.location.href = "/";
-      }, 2000);
-    } catch (error) {
-      toast.error("Invalid email or password");
-    }
+    handleLogin(email, password);
   };
+
   return (
     <div className={styles.loginPageContainer}>
       <div className={styles.logoContainer}>

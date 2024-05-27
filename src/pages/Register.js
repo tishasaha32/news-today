@@ -2,17 +2,7 @@ import React, { useState } from "react";
 import styles from "./Register.module.css";
 import { Link } from "react-router-dom";
 import lightmodeLogo from "../assets/logo/lightmodeLogo.png";
-import { auth, db } from "../components/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import {
-  setDoc,
-  doc,
-  getDocs,
-  collection,
-  query,
-  where,
-} from "firebase/firestore";
-import { toast } from "react-toastify";
+import useHandleRegister from "../hooks/useHandleRegister";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -20,55 +10,11 @@ function Register() {
   const [lname, setLName] = useState("");
   const [password, setPassword] = useState("");
 
-  const checkUserExists = async (email) => {
-    try {
-      const q = query(collection(db, "users"), where("email", "==", email));
-      const querySnapshot = await getDocs(q);
-      return !querySnapshot.empty;
-    } catch (error) {
-      console.error("Error checking user existence:", error);
-      throw error;
-    }
-  };
+  const handleRegister = useHandleRegister();
 
-  const checkPassword = (password) => {
-    if (password.length < 6) {
-      return false;
-    }
-    return true;
-  };
-
-  const handleRegister = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const userExists = await checkUserExists(email);
-      if (userExists) {
-        toast.info("User already exists");
-        return;
-      }
-
-      if (!checkPassword(password)) {
-        toast.warning("Password must be at least 6 characters long");
-        return;
-      }
-
-      const res = await createUserWithEmailAndPassword(auth, email, password);
-      if (res?.user) {
-        await setDoc(doc(db, "users", res?.user.uid), {
-          fname: fName,
-          lname: lname,
-          email: email,
-        });
-      }
-      console.log("success");
-      setEmail("");
-      setPassword("");
-      setFName("");
-      setLName("");
-      window.location.href = "/login";
-    } catch (error) {
-      // console.log(error);
-    }
+    handleRegister(email, password, fName, lname);
   };
 
   return (
@@ -76,10 +22,7 @@ function Register() {
       <div className={styles.logoContainer}>
         <img src={lightmodeLogo} alt="logo" className={styles.logo} />
       </div>
-      <form
-        className={styles.registerDetailsContainer}
-        onSubmit={handleRegister}
-      >
+      <form className={styles.registerDetailsContainer} onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Enter Email"
@@ -112,7 +55,6 @@ function Register() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-
         <button className={styles.registerButton}>REGISTER</button>
         <p>
           Already have an account?{" "}
