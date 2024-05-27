@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../components/firebase";
 import { getDocs, collection, query, where } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
   const checkEmailExists = async (email) => {
     try {
@@ -28,15 +28,16 @@ function Login() {
     try {
       const emailExists = await checkEmailExists(email);
       if (!emailExists) {
-        console.log("Email does not exist");
+        toast.error("Email does not exist");
         return;
       }
       await signInWithEmailAndPassword(auth, email, password);
-
-      window.location.href = "/";
-      console.log("success");
+      toast.success("Login Successful");
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 2000);
     } catch (error) {
-      console.log("Invalid email or password");
+      toast.error("Invalid email or password");
     }
   };
   return (

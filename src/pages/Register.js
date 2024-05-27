@@ -4,9 +4,15 @@ import { Link } from "react-router-dom";
 import lightmodeLogo from "../assets/logo/lightmodeLogo.png";
 import { auth, db } from "../components/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { setDoc, doc, getDoc } from "firebase/firestore";
-
-// Paste the checkUserExists function here
+import {
+  setDoc,
+  doc,
+  getDocs,
+  collection,
+  query,
+  where,
+} from "firebase/firestore";
+import { toast } from "react-toastify";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -16,8 +22,9 @@ function Register() {
 
   const checkUserExists = async (email) => {
     try {
-      const userDoc = await getDoc(doc(db, "users", email));
-      return userDoc.exists.super;
+      const q = query(collection(db, "users"), where("email", "==", email));
+      const querySnapshot = await getDocs(q);
+      return !querySnapshot.empty;
     } catch (error) {
       console.error("Error checking user existence:", error);
       throw error;
@@ -36,12 +43,12 @@ function Register() {
     try {
       const userExists = await checkUserExists(email);
       if (userExists) {
-        console.log("User already exists");
+        toast.info("User already exists");
         return;
       }
 
       if (!checkPassword(password)) {
-        console.log("Password must be at least 6 characters long");
+        toast.warning("Password must be at least 6 characters long");
         return;
       }
 
@@ -60,7 +67,7 @@ function Register() {
       setLName("");
       window.location.href = "/login";
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
