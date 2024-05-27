@@ -14,7 +14,7 @@ function useGetCategoryNews({ category = null }) {
         setCategoryNews(response.data);
       }
     });
-  }, [categoryNews, category]);
+  }, [category]);
   return { categoryNews, setCategoryNews };
 }
 

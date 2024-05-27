@@ -1,6 +1,5 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import useGetCategoryNews from "../hooks/useGetCategoryNews";
 
 export const SaveContext = createContext();
 

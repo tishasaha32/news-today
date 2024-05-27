@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import useGetCategoryNews from "../hooks/useGetCategoryNews";
 import styles from "./NewsCards.module.css";
 import { SaveContext } from "../context/saveContext";
 import HeaderTitle from "../common/HeaderTitle";
