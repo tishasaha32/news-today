@@ -3,7 +3,6 @@ import BottomNavbar from "../common/BottomNavbar";
 import Header from "../common/Header";
 import HomePageCategory from "../components/HomePageCategory";
 import HomePageStories from "../components/HomePageStories";
-import NewsCards from "../components/NewsCards";
 
 function Home() {
   return (
@@ -11,7 +10,6 @@ function Home() {
       <Header />
       <HomePageStories />
       <HomePageCategory />
-      {/* <NewsCards /> */}
       <BottomNavbar activePage="Home" />
     </div>
   );

@@ -18,3 +18,17 @@
     color: #4C71F0;
     font-weight: bolder;
 }
+
+@media screen and (min-width: 600px) {
+    /* .categoryContainer{
+        justify-content: center;
+        gap: 2rem;
+    } */
+    .categoryText{
+        cursor: pointer;
+    }
+    .activeCategoryText{
+        cursor: pointer;
+    }
+    
+}

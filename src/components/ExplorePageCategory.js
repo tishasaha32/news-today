@@ -33,7 +33,7 @@ function ExplorePageCategory() {
 
   const { darkMode } = useContext(DarkModeContext);
   return (
-    <div>
+    <div className={styles.explorePageCategoryContainer}>
       <h3 className={styles.header}>Explore by Category</h3>
       <div className={styles.categoriesContainer}>
         {categories.map((category) => (

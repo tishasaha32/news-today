@@ -27,3 +27,11 @@
     border-image: linear-gradient(to right, pink, blue);
     border-image-slice: 1;  */
 }
+
+
+/* @media screen and (min-width: 600px) {
+    .storiesContainer{
+        justify-content: center;
+        gap: 2rem;
+    }
+} */
