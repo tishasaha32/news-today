@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./StoryModal.module.css";
 import { RxCross2 } from "react-icons/rx";
 
 function StoryModal({
-  isModalOpen,
-  selectedStory,
-  onClose,
   story,
   setSelectedStory,
   index,
@@ -22,7 +19,6 @@ function StoryModal({
     if (newIndex < stories.length) {
       setSelectedStory(stories[newIndex]);
       setIndex(newIndex);
-      // Toggle the timer key to reset the animation
       setTimerKey((prevKey) => prevKey + 1);
     } else {
       setIsModalOpen(false);
