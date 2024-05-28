@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 100vh;
     width: 100vw;
     gap: 2rem;
 }
@@ -45,6 +45,43 @@
 .loginLink{
     color: #4C71F0;
     font-weight: bolder;
+}
+
+.continueWithGoogleContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.orContainer {
+    width: 18rem; 
+    text-align: center; 
+    border-bottom: 1px solid #a7a7a7;
+    color: #a7a7a7; 
+    line-height: 0.1em;
+} 
+.orSpan{ 
+    background:#fff; 
+    padding:0 10px; 
+}
+.continueWithGoogleButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 20rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.googleIcon{
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 @media screen and (min-width: 600px) {
