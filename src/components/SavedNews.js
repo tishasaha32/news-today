@@ -20,7 +20,7 @@ function SavedNews() {
               </div>
               <div>
                 <p className={styles.newsTitle}>
-                  {item.headline} : {item.body.slice(0, 15)}...
+                  {item.headline.slice(0, 50)}...
                 </p>
                 <p className={styles.newsAuthor}>by {item.author}</p>
               </div>

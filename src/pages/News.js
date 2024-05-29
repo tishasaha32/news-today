@@ -1,9 +1,7 @@
 import React from "react";
 import useGetNews from "../hooks/useGetNews";
-import styles from "./News.module.css";
-import Header from "../common/Header";
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import NewsBodyPage from "../common/NewsBodyPage";
+import HeaderWithBackButton from "../common/HeaderWithBackButton";
 
 function News() {
   const pathname = window.location.pathname;
@@ -11,13 +9,7 @@ function News() {
   const { news } = useGetNews({ id });
   return (
     <div>
-      <div className={styles.headerContainer}>
-        <MdOutlineArrowBackIosNew
-          className={styles.backIcon}
-          onClick={() => window.history.back()}
-        />
-        <Header />
-      </div>
+      <HeaderWithBackButton />
       <NewsBodyPage news={news} />
     </div>
   );

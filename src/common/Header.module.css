@@ -12,7 +12,9 @@
 .icon{
     font-size: 1.5rem;
 }
-
+.addNewsIcon{
+    font-size: 1.7rem;
+}
 /* @media screen and (min-width: 600px) { 
     .header{
        justify-content: space-around;

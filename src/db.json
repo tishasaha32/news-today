@@ -86,7 +86,7 @@
       "section": "sports",
       "date": "2024-05-24T16:00:00",
       "image": "http://127.0.0.1:5500/frontend/src/assets/sports/sports8.jpg",
-      "saved": false
+      "saved": true
     },
     {
       "id": "9",
@@ -185,7 +185,7 @@
       "section": "business",
       "date": "2020-02-07T22:03:03",
       "image": "http://127.0.0.1:5500/frontend/src/assets/business/business7.png",
-      "saved": false
+      "saved": true
     },
     {
       "id": "18",
@@ -229,7 +229,7 @@
       "section": "technology",
       "date": "2020-01-02T10:46:46",
       "image": "http://127.0.0.1:5500/frontend/src/assets/technology/technology1.jpg",
-      "saved": false
+      "saved": true
     },
     {
       "id": "22",
@@ -284,7 +284,7 @@
       "section": "technology",
       "date": "2020-01-24T18:30:30",
       "image": "http://127.0.0.1:5500/frontend/src/assets/technology/technology6.jpg",
-      "saved": false
+      "saved": true
     },
     {
       "id": "27",
@@ -295,7 +295,7 @@
       "section": "technology",
       "date": "2020-02-03T11:55:55",
       "image": "http://127.0.0.1:5500/frontend/src/assets/technology/technology7.jpg",
-      "saved": false
+      "saved": true
     },
     {
       "id": "28",
@@ -526,7 +526,7 @@
       "section": "worldNews",
       "date": "2020-03-05T14:42:42",
       "image": "http://127.0.0.1:5500/frontend/src/assets/worldNews/news8.jpg",
-      "saved": false
+      "saved": true
     },
     {
       "id": "49",
@@ -548,7 +548,7 @@
       "section": "worldNews",
       "date": "2020-03-18T21:10:10",
       "image": "http://127.0.0.1:5500/frontend/src/assets/worldNews/news10.jpg",
-      "saved": true
+      "saved": false
     },
     {
       "id": "51",
@@ -625,7 +625,7 @@
       "section": "indiaNews",
       "date": "2020-01-18T05:33:33",
       "image": "http://127.0.0.1:5500/frontend/src/assets/indiaNews/indiaNews7.jpg",
-      "saved": true
+      "saved": false
     },
     {
       "id": "58",
@@ -658,7 +658,7 @@
       "section": "indiaNews",
       "date": "2020-01-31T04:03:03",
       "image": "http://127.0.0.1:5500/frontend/src/assets/indiaNews/indiaNews10.jpg",
-      "saved": false
+      "saved": true
     },
     {
       "id": "61",
@@ -669,7 +669,7 @@
       "section": "economic",
       "date": "2020-01-08T13:03:03",
       "image": "http://127.0.0.1:5500/frontend/src/assets/economic/economic1.jpeg",
-      "saved": true
+      "saved": false
     },
     {
       "id": "62",
@@ -779,7 +779,7 @@
       "section": "localNews",
       "date": "2020-01-02T10:46:46",
       "image": "http://127.0.0.1:5500/frontend/src/assets/localNews/localNews1.jpg",
-      "saved": true
+      "saved": false
     },
     {
       "id": "72",
@@ -878,7 +878,7 @@
       "section": "localNews",
       "date": "2020-02-13T12:05:05",
       "image": "http://127.0.0.1:5500/frontend/src/assets/localNews/localNews10.jpg",
-      "saved": true
+      "saved": false
     },
     {
       "id": "81",

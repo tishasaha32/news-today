@@ -12,8 +12,9 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import ResetPassword from "./pages/ResetPassword";
 import Profile from "./pages/Profile";
+import AddNews from "./pages/AddNews";
 import { auth } from "./components/firebase";
-import ProtectedRoute from "./ProtectedRoute"; // Import the ProtectedRoute component
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -70,6 +71,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <Trending />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/addNews"
+          element={
+            <ProtectedRoute user={user}>
+              <AddNews />
             </ProtectedRoute>
           }
         />

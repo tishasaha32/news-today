@@ -5,8 +5,11 @@ import { IoMoon } from "react-icons/io5";
 import { LuSunMoon } from "react-icons/lu";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
+import { BiEdit } from "react-icons/bi";
+import { BiSolidCommentEdit } from "react-icons/bi";
 
 import HeaderTitle from "./HeaderTitle";
+import { Link } from "react-router-dom";
 
 function Header() {
   const { handleDarkMode, darkMode } = useContext(DarkModeContext);
@@ -19,18 +22,27 @@ function Header() {
         ) : (
           <IoMoon onClick={() => handleDarkMode()} className={styles.icon} />
         )}
+        <Link
+          to="/profile"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          {darkMode ? (
+            <FaUserCircle className={styles.icon} />
+          ) : (
+            <FaRegUserCircle className={styles.icon} />
+          )}
+        </Link>
 
-        {darkMode ? (
-          <FaUserCircle
-            onClick={() => (window.location.href = "/profile")}
-            className={styles.icon}
-          />
-        ) : (
-          <FaRegUserCircle
-            onClick={() => (window.location.href = "/profile")}
-            className={styles.icon}
-          />
-        )}
+        <Link
+          to="/addNews"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          {darkMode ? (
+            <BiSolidCommentEdit className={styles.addNewsIcon} />
+          ) : (
+            <BiEdit className={styles.addNewsIcon} />
+          )}
+        </Link>
       </div>
     </div>
   );
