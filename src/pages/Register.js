@@ -3,7 +3,7 @@ import styles from "./Register.module.css";
 import { Link } from "react-router-dom";
 import lightmodeLogo from "../assets/logo/lightmodeLogo.png";
 import useHandleRegister from "../hooks/useHandleRegister";
-import { FcGoogle } from "react-icons/fc";
+import SignInWithGoogle from "./SignInWithGoogle";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -67,15 +67,7 @@ function Register() {
           </Link>
         </p>
       </form>
-      <div className={styles.continueWithGoogleContainer}>
-        <p className={styles.orContainer}>
-          <span className={styles.orSpan}>or</span>
-        </p>
-        <button className={styles.continueWithGoogleButton}>
-          <FcGoogle className={styles.googleIcon} />
-          <p>Continue with Google</p>
-        </button>
-      </div>
+      <SignInWithGoogle />
     </div>
   );
 }

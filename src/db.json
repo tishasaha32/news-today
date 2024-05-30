@@ -328,7 +328,7 @@
       "section": "technology",
       "date": "2020-02-13T12:05:05",
       "image": "http://127.0.0.1:5500/frontend/src/assets/technology/technology10.jpeg",
-      "saved": false
+      "saved": true
     },
     {
       "id": "31",
@@ -493,7 +493,7 @@
       "section": "worldNews",
       "date": "2020-01-13T03:27:27",
       "image": "http://127.0.0.1:5500/frontend/src/assets/worldNews/news5.jpeg",
-      "saved": false
+      "saved": true
     },
     {
       "id": "46",

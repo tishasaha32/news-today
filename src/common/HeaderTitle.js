@@ -5,14 +5,12 @@ import styles from "./HeaderTitle.module.css";
 
 function HeaderTitle() {
   return (
-    <Link to="/home" style={{ textDecoration: "none", color: "inherit" }}>
-      <div className={styles.headlineContainer}>
-        <VscCircleFilled className={styles.circle} />
-        <div className={styles.headlineText}>
-          <p>NEWS TODAY</p>
-        </div>
+    <div className={styles.headlineContainer}>
+      <VscCircleFilled className={styles.circle} />
+      <div className={styles.headlineText}>
+        <p>NEWS TODAY</p>
       </div>
-    </Link>
+    </div>
   );
 }
 

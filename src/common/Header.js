@@ -10,9 +10,11 @@ import { BiSolidCommentEdit } from "react-icons/bi";
 
 import HeaderTitle from "./HeaderTitle";
 import { Link } from "react-router-dom";
+import useFetchUserData from "../hooks/useFetchUserData";
 
 function Header() {
   const { handleDarkMode, darkMode } = useContext(DarkModeContext);
+  const userDetails = useFetchUserData();
   return (
     <div className={styles.header}>
       <HeaderTitle />
@@ -26,10 +28,22 @@ function Header() {
           to="/profile"
           style={{ textDecoration: "none", color: "inherit" }}
         >
-          {darkMode ? (
-            <FaUserCircle className={styles.icon} />
-          ) : (
-            <FaRegUserCircle className={styles.icon} />
+          {userDetails && (
+            <img
+              src={userDetails?.photoURL}
+              alt="profile"
+              className={styles.profilePhoto}
+            />
+          )}
+
+          {!userDetails && (
+            <div>
+              {darkMode ? (
+                <FaUserCircle className={styles.icon} />
+              ) : (
+                <FaRegUserCircle className={styles.icon} />
+              )}
+            </div>
           )}
         </Link>
 

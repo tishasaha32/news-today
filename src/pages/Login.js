@@ -3,7 +3,7 @@ import styles from "./Login.module.css";
 import lightmodeLogo from "../assets/logo/lightmodeLogo.png";
 import { Link } from "react-router-dom";
 import useHandleLogin from "../hooks/useHandleLogin";
-import { FcGoogle } from "react-icons/fc";
+import SignInWithGoogle from "./SignInWithGoogle";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -56,15 +56,7 @@ function Login() {
           </p>
         </div>
       </form>
-      <div className={styles.continueWithGoogleContainer}>
-        <p className={styles.orContainer}>
-          <span className={styles.orSpan}>or</span>
-        </p>
-        <button className={styles.continueWithGoogleButton}>
-          <FcGoogle className={styles.googleIcon} />
-          <p>Continue with Google</p>
-        </button>
-      </div>
+      <SignInWithGoogle />
     </div>
   );
 }
