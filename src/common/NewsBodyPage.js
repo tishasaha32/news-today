@@ -5,16 +5,11 @@ import { SaveContext } from "../context/saveContext";
 import { FaBookmark } from "react-icons/fa";
 
 function NewsBodyPage({ news }) {
-  const lines = news?.body?.match(/[^.!?]+[.!?]/g);
-  const firstFiveLines = lines?.slice(0, 5);
-  const NextTenLines = lines?.slice(5, 15);
-  const restLines = lines?.slice(15);
-
   const { handleSave } = useContext(SaveContext);
   return (
     <div>
       <div className={styles.newsHeaderContainer}>
-        <img src={news.image} className={styles.newsImage} />
+        <img src={news.imageUrl} className={styles.newsImage} />
         <div className={styles.overlay}></div>
         <div
           className={
@@ -36,9 +31,13 @@ function NewsBodyPage({ news }) {
         <p className={styles.newsAuthor}>By {news.author}</p>
         <h2 className={styles.newsTitle}>{news.headline}</h2>
       </div>
-      <p className={styles.newsBodyFirst}>{firstFiveLines}</p>
-      <p className={styles.newsBodyNextFive}>"{NextTenLines}"</p>
-      <p className={styles.newsBodyRest}>{restLines}</p>
+      <p
+        className={styles.newsBody}
+        dangerouslySetInnerHTML={{ __html: news.body }}
+      />
+      <div className={styles.summarizeButtonContainer}>
+        <button className={styles.summarizeButton}>Summarize with GPT</button>
+      </div>
     </div>
   );
 }

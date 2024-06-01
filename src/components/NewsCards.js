@@ -13,6 +13,10 @@ function NewsCards({ categoryNews }) {
     event.stopPropagation();
     handleSave(item);
   };
+
+  useEffect(() => {
+    console.log(categoryNews);
+  }, []);
   return (
     <div>
       <div className={styles.newsCards}>
@@ -24,7 +28,7 @@ function NewsCards({ categoryNews }) {
               style={{ textDecoration: "none" }}
             >
               <div className={styles.newsCard}>
-                <img src={item.image} className={styles.newsImage} />
+                <img src={item.imageUrl} className={styles.newsImage} />
                 <div className={styles.overlay}></div>
                 <div
                   className={
@@ -51,9 +55,6 @@ function NewsCards({ categoryNews }) {
                 </div>
                 <div className={styles.newsAuthorAndDateContainer}>
                   <p className={styles.newsAuthor}>By {item.author}</p>
-                  <p className={styles.newsDate}>
-                    {item.date.split("T")[0].split("-").reverse().join("-")}
-                  </p>
                 </div>
               </div>
             </Link>

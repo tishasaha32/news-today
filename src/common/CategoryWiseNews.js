@@ -27,7 +27,7 @@ function CategoryWiseNews({ category }) {
           >
             <div className={styles.newsCard}>
               <img
-                src={item.image}
+                src={item.imageUrl}
                 className={styles.newsImage}
                 alt={item.headline}
               />
@@ -54,14 +54,13 @@ function CategoryWiseNews({ category }) {
                     )}
                   </div>
                 </div>
-                <p className={styles.newsAuthorAndDate}>
-                  by {item.author} |{" "}
-                  {item.date.split("T")[0].split("-").reverse().join("-")}
-                </p>
-                <p className={styles.newsbody}>
-                  {item.body.slice(0, 150)}...
-                  <span className={styles.readMore}>Read More</span>
-                </p>
+                <div
+                  className={styles.newsbody}
+                  dangerouslySetInnerHTML={{
+                    __html: item.body.slice(0, 150) + "...",
+                  }}
+                />
+                <span className={styles.readMore}>Read More</span>
               </div>
             </div>
           </Link>

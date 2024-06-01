@@ -12,11 +12,11 @@
 }
 .newsCard{
     position: relative;
-    height: 32rem;
+    height: 28rem;
 }
 .newsImage{
     width: 20rem;
-    height: 32rem;
+    height: 28rem;
     border-radius: 1rem;
     object-fit: cover;
 }

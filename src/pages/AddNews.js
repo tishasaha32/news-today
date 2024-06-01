@@ -1,22 +1,68 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import styles from "./AddNews.module.css";
 import HeaderWithBackButton from "../common/HeaderWithBackButton";
+import { useAddNews } from "../hooks/useAddNews";
 
 function AddNews() {
-  const [value, setValue] = useState("");
+  const {
+    headline,
+    setHeadline,
+    author,
+    setAuthor,
+    image,
+    setImage,
+    abstract,
+    setAbstract,
+    section,
+    setSection,
+    body,
+    setBody,
+    fileInputRef,
+    handleAddNews,
+  } = useAddNews();
+
   return (
     <div>
       <HeaderWithBackButton />
-      <div className={styles.addNewsContainer}>
-        <input placeholder="Enter Headline" className={styles.input} />
-        <input placeholder="Enter Author Name" className={styles.input} />
-        <input placeholder="Enter Image URL" className={styles.input} />
-        <input placeholder="Enter Abstract" className={styles.input} />
-
-        <select className={styles.selectOption}>
-          <option hidden>Select Category</option>
+      <form className={styles.addNewsContainer} onSubmit={handleAddNews}>
+        <input
+          placeholder="Enter Headline"
+          className={styles.input}
+          value={headline}
+          onChange={(e) => setHeadline(e.target.value)}
+          required
+        />
+        <input
+          placeholder="Enter Author Name"
+          className={styles.input}
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+          required
+        />
+        <input
+          placeholder="Choose Image"
+          type="file"
+          className={styles.input}
+          ref={fileInputRef}
+          onChange={(e) => setImage(e.target.files[0])}
+          required
+        />
+        <input
+          placeholder="Enter Abstract"
+          className={styles.input}
+          value={abstract}
+          onChange={(e) => setAbstract(e.target.value)}
+          required
+        />
+        <select
+          className={styles.selectOption}
+          value={section}
+          onChange={(e) => setSection(e.target.value)}
+          required
+        >
+          <option hidden>Select section</option>
           <option value="worldNews" className={styles.option}>
             World News
           </option>
@@ -48,16 +94,17 @@ function AddNews() {
             Business
           </option>
         </select>
-        {/* <div className={styles.reactQuillContainer}> */}
         <ReactQuill
-          value={value}
+          value={body}
           style={{ height: "30vh" }}
-          onChange={setValue}
+          onChange={setBody}
           className={styles.reactQuill}
+          required
         />
-        {/* </div> */}
-        <button className={styles.createButton}>CREATE NEWS</button>
-      </div>
+        <button className={styles.createButton} type="submit">
+          CREATE NEWS
+        </button>
+      </form>
     </div>
   );
 }
