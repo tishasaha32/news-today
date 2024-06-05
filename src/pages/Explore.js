@@ -8,7 +8,7 @@ function Explore() {
   return (
     <div>
       <Header />
-      <SearchBar />
+      {/* <SearchBar /> */}
       <ExplorePageCategory />
       <BottomNavbar activePage="Explore" />
     </div>

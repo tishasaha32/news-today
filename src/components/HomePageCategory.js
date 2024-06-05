@@ -4,53 +4,38 @@ import NewsCards from "./NewsCards";
 import useGetCategoryNews from "../hooks/useGetCategoryNews";
 
 function HomePageCategory() {
-  const [selectedCategory, setSelectedCategory] = useState("World News");
-  let category;
-  if (selectedCategory === "World News") {
-    category = "worldNews";
-  }
-  if (selectedCategory === "Economic") {
-    category = "economic";
-  }
-  if (selectedCategory === "Local News") {
-    category = "localNews";
-  }
-  if (selectedCategory === "Good News") {
-    category = "goodNews";
-  }
-  if (selectedCategory === "USA News") {
-    category = "usaNews";
-  }
-  if (selectedCategory === "India News") {
-    category = "indiaNews";
-  }
-  const { categoryNews } = useGetCategoryNews({ category: category });
+  const [selectedCategory, setSelectedCategory] = useState("worldNews");
+  const { categoryNews, setCategoryNews } =
+    useGetCategoryNews(selectedCategory);
   const categories = [
-    "World News",
-    "Economic",
-    "Local News",
-    "Good News",
-    "USA News",
-    "India News",
+    { name: "World News", param: "worldNews", id: 1 },
+    { name: "Economic", param: "economic", id: 2 },
+    { name: "Local News", param: "localNews", id: 3 },
+    { name: "Good News", param: "goodNews", id: 4 },
+    { name: "USA News", param: "usaNews", id: 5 },
+    { name: "India News", param: "indiaNews", id: 6 },
   ];
   return (
     <div>
       <div className={styles.categoryContainer}>
         {categories.map((category) => (
           <p
-            key={category}
+            key={category.id}
             className={
-              selectedCategory === category
+              selectedCategory === category.param
                 ? styles.activeCategoryText
                 : styles.categoryText
             }
-            onClick={() => setSelectedCategory(category)}
+            onClick={() => setSelectedCategory(category.param)}
           >
-            {category}
+            {category.name}
           </p>
         ))}
       </div>
-      <NewsCards categoryNews={categoryNews} />
+      <NewsCards
+        categoryNews={categoryNews}
+        setCategoryNews={setCategoryNews}
+      />
     </div>
   );
 }

@@ -5,7 +5,7 @@
 }
 .newsImage{
     width: 100vw;
-    height: 40vh;
+    height: 32vh;
     object-fit: cover;
     object-position: center top;
 }
@@ -19,6 +19,7 @@
     text-align: justify;
 }
 .readMore{
+    padding: 1rem 1rem 0 1rem;
     color: #4C71F0;
     font-weight: bold;
     text-decoration: underline;

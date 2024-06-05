@@ -1,22 +1,16 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import styles from "./NewsCards.module.css";
-import { SaveContext } from "../context/saveContext";
 import HeaderTitle from "../common/HeaderTitle";
 import { CiBookmark } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { FaBookmark } from "react-icons/fa";
+import useHandleSaveClick from "../hooks/useHandleSaveClick";
 
-function NewsCards({ categoryNews }) {
-  const { handleSave } = useContext(SaveContext);
-  const handleSaveClick = (event, item) => {
-    event.preventDefault();
-    event.stopPropagation();
-    handleSave(item);
-  };
-
-  useEffect(() => {
-    console.log(categoryNews);
-  }, []);
+function NewsCards({ categoryNews, setCategoryNews }) {
+  const { handleSaveClick } = useHandleSaveClick({
+    categoryNews: categoryNews,
+    setCategoryNews: setCategoryNews,
+  });
   return (
     <div>
       <div className={styles.newsCards}>
@@ -53,7 +47,7 @@ function NewsCards({ categoryNews }) {
                 <div className={styles.headerTitle}>
                   <HeaderTitle />
                 </div>
-                <div className={styles.newsAuthorAndDateContainer}>
+                <div className={styles.newsAuthorContainer}>
                   <p className={styles.newsAuthor}>By {item.author}</p>
                 </div>
               </div>

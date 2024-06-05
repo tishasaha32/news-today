@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { db } from "../components/firebase";
 import { collection, getDocs } from "firebase/firestore";
 
-function useGetCategoryNews({ category = null }) {
+function useGetCategoryNews(category = null) {
   const [categoryNews, setCategoryNews] = useState([]);
+  const [savedNews, setSavedNews] = useState([]);
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -14,6 +15,9 @@ function useGetCategoryNews({ category = null }) {
           id: doc.id,
           ...doc.data(),
         }));
+
+        const savedNews = newsList.filter((item) => item.saved);
+        setSavedNews(savedNews);
 
         if (category) {
           const filteredNews = newsList.filter(
@@ -31,7 +35,7 @@ function useGetCategoryNews({ category = null }) {
     fetchNews();
   }, [category]);
 
-  return { categoryNews, setCategoryNews };
+  return { categoryNews, setCategoryNews, savedNews };
 }
 
 export default useGetCategoryNews;

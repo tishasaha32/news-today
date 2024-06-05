@@ -2,20 +2,17 @@ import React, { useContext } from "react";
 import { CiBookmark } from "react-icons/ci";
 import styles from "./CategoryWiseNews.module.css";
 import useGetCategoryNews from "../hooks/useGetCategoryNews";
-import { SaveContext } from "../context/saveContext";
 import { Link } from "react-router-dom";
 import { FaBookmark } from "react-icons/fa";
+import useHandleSaveClick from "../hooks/useHandleSaveClick";
 
 function CategoryWiseNews({ category }) {
-  const { categoryNews } = useGetCategoryNews({ category });
-  const { handleSave } = useContext(SaveContext);
+  const { categoryNews, setCategoryNews } = useGetCategoryNews(category);
 
-  const handleSaveClick = (event, item) => {
-    event.preventDefault();
-    event.stopPropagation();
-    handleSave(item);
-  };
-
+  const { handleSaveClick } = useHandleSaveClick({
+    categoryNews: categoryNews,
+    setCategoryNews: setCategoryNews,
+  });
   return (
     <div className={styles.newsCards}>
       {categoryNews.map((item) => {

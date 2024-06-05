@@ -4,7 +4,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { DarkModeContextProvider } from "./context/darkmodeContext";
-import { SaveContextProvider } from "./context/saveContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -13,10 +12,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <DarkModeContextProvider>
-        <SaveContextProvider>
-          <App />
-          <ToastContainer autoClose={2000} />
-        </SaveContextProvider>
+        <App />
+        <ToastContainer autoClose={2000} />
       </DarkModeContextProvider>
     </BrowserRouter>
   </React.StrictMode>

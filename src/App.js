@@ -31,7 +31,6 @@ function App() {
   }, []);
 
   if (loading) {
-    // Optionally, show a loading spinner or similar while checking auth status
     return <div>Loading...</div>;
   }
 
