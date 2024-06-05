@@ -40,13 +40,13 @@ function StoryModal({
         >
           <hr className={styles.line}></hr>
         </div>
-        <img src={story.img} className={styles.storyImage} />
+        <img src={story.image} className={styles.storyImage} />
         <div className={styles.overlay}></div>
         <RxCross2
           className={styles.closeIcon}
           onClick={(event) => handleClose(event)}
         />
-        <p className={styles.storyBody}>{story.body}</p>
+        <p className={styles.storyBody}>{story.story}</p>
       </div>
     </div>
   );

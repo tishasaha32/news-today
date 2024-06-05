@@ -6,7 +6,7 @@
     width: 100%;
     bottom: 0;
     position: fixed;
-    z-index: 100;
+    z-index: 10;
     padding: 10px;
     background-color: #dad9d9;
 }
