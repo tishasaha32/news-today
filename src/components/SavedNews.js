@@ -20,7 +20,9 @@ function SavedNews() {
                 <img src={item.imageUrl} className={styles.newsImage} />
               </div>
               <div>
-                <p className={styles.newsTitle}>{item.headline}</p>
+                <p className={styles.newsTitle}>
+                  {item.headline.slice(0, 50)}...
+                </p>
                 <p className={styles.newsAuthor}>by {item.author}</p>
               </div>
             </div>

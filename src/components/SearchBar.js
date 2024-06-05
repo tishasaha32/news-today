@@ -7,7 +7,7 @@ import useGetCategoryNews from "../hooks/useGetCategoryNews";
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const { categoryNews } = useGetCategoryNews({});
+  const { categoryNews } = useGetCategoryNews();
 
   useEffect(() => {
     if (searchTerm === "") {
@@ -39,8 +39,10 @@ function SearchBar() {
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <div className={styles.resultItem}>
-                <img src={item.image} className={styles.newsImage} />
-                <p className={styles.newsTitle}>{item.headline}</p>
+                <img src={item.imageUrl} className={styles.newsImage} />
+                <p className={styles.newsTitle}>
+                  {item.headline.slice(0, 30)}...
+                </p>
               </div>
             </Link>
           ))}
