@@ -1,4 +1,3 @@
-// src/AnimatedText.jsx
 import React, { useState, useEffect } from "react";
 
 const AnimatedText = ({ text, speed = 50 }) => {

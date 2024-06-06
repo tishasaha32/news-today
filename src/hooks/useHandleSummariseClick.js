@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 function useHandleSummariseClick(news) {
   const [summary, setSummary] = useState("");
 
   const summarizeNews = async () => {
-    const apiKey = "sk-proj-G5JaNXn8QGvRCKAM18GcT3BlbkFJdlXjfwkXTsBue5N4l5zb"; // Replace with your actual API key
+    if (!summary) {
+      toast.info("Summarizing news...", { autoClose: 7000 });
+    }
+    const apiKey = "sk-proj-G5JaNXn8QGvRCKAM18GcT3BlbkFJdlXjfwkXTsBue5N4l5zb";
 
     try {
       const response = await axios.post(

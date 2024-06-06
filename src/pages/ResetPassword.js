@@ -1,25 +1,13 @@
 import React, { useState } from "react";
 import styles from "./ResetPassword.module.css";
 import { Link } from "react-router-dom";
-import { auth } from "../components/firebase";
-import { sendPasswordResetEmail } from "firebase/auth";
+import useHandleResetPassword from "../hooks/useHandleResetPassword";
 
 function ResetPassword() {
   const logo =
     "https://firebasestorage.googleapis.com/v0/b/news-22cea.appspot.com/o/logo%2FNews%20Today%20Logo.png?alt=media&token=d79b5373-045a-4d25-bbad-04c95ee3157f";
-
   const [email, setEmail] = useState("");
-  const handleResetPassword = async (e) => {
-    e.preventDefault();
-
-    try {
-      await sendPasswordResetEmail(auth, email);
-      alert("Password reset email sent. Check your inbox.");
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+  const { handleResetPassword } = useHandleResetPassword(email);
   return (
     <div className={styles.resetPasswordPageContainer}>
       <div className={styles.logoContainer}>
