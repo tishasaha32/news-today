@@ -10,6 +10,7 @@ import { DarkModeContext } from "../context/darkmodeContext";
 
 function Profile() {
   const userDetails = useFetchUserData();
+
   const logout = useLogout();
 
   const { darkMode } = useContext(DarkModeContext);

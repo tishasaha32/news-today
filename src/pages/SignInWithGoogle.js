@@ -1,22 +1,10 @@
 import React from "react";
 import styles from "./SignInWithGoogle.module.css";
 import { FcGoogle } from "react-icons/fc";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "../components/firebase";
-import { toast } from "react-toastify";
+import useGoogleLogin from "../hooks/useGoogleLogin";
 
 function SignInWithGoogle() {
-  function googleLogin() {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider).then(async (result) => {
-      if (result.user) {
-        toast.success("Login Successful");
-        setTimeout(() => {
-          window.location.href = "/home";
-        }, 2000);
-      }
-    });
-  }
+  const { googleLogin } = useGoogleLogin();
   return (
     <div className={styles.continueWithGoogleContainer}>
       <p className={styles.orContainer}>

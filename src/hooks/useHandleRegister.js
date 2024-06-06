@@ -30,6 +30,7 @@ const useHandleRegister = () => {
             fname: fName,
             lname: lName,
             email: email,
+            admin: false,
           });
         }
         toast.success("Registration successful");

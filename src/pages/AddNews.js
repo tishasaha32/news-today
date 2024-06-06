@@ -11,7 +11,6 @@ function AddNews() {
     setHeadline,
     author,
     setAuthor,
-    image,
     setImage,
     abstract,
     setAbstract,

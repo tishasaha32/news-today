@@ -13,7 +13,7 @@ function ExplorePageCategory() {
       <div className={styles.categoriesContainer}>
         {categories.map((category) => (
           <Link
-            to={`/category/${category.name.toLowerCase()}`}
+            to={`/category/${category.category.toLowerCase()}`}
             key={category.id}
             style={{ textDecoration: "none" }}
           >
@@ -24,9 +24,9 @@ function ExplorePageCategory() {
                   : styles.categoryContainer
               }
             >
-              <img src={categories.image} className={styles.categoryImg} />
+              <img src={category.image} className={styles.categoryImg} />
               <div className={styles.categoryAndExploreButton}>
-                <p className={styles.category}>{categories.category}</p>
+                <p className={styles.category}>{category.category}</p>
                 <button className={styles.exploreButton}>Explore</button>
               </div>
             </div>

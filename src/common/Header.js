@@ -44,17 +44,18 @@ function Header() {
             </div>
           )}
         </Link>
-
-        <Link
-          to="/addNews"
-          style={{ textDecoration: "none", color: "inherit" }}
-        >
-          {darkMode ? (
-            <RiEditCircleFill className={styles.addNewsIcon} />
-          ) : (
-            <BiEdit className={styles.addNewsIcon} />
-          )}
-        </Link>
+        {userDetails?.admin && (
+          <Link
+            to="/addNews"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            {darkMode ? (
+              <RiEditCircleFill className={styles.addNewsIcon} />
+            ) : (
+              <BiEdit className={styles.addNewsIcon} />
+            )}
+          </Link>
+        )}
       </div>
     </div>
   );
