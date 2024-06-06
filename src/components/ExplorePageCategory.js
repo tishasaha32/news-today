@@ -1,36 +1,11 @@
 import React, { useContext } from "react";
-import business from "../assets/category/business.png";
-import entertainment from "../assets/category/entertainment.png";
-import sports from "../assets/category/sports.png";
-import technology from "../assets/category/technology.png";
 import styles from "./ExplorePageCategory.module.css";
 import { DarkModeContext } from "../context/darkmodeContext";
 import { Link } from "react-router-dom";
+import useGetCategories from "../hooks/useGetCategories";
 
 function ExplorePageCategory() {
-  const categories = [
-    {
-      id: 1,
-      name: "Business",
-      image: business,
-    },
-    {
-      id: 2,
-      name: "Entertainment",
-      image: entertainment,
-    },
-    {
-      id: 3,
-      name: "Sports",
-      image: sports,
-    },
-    {
-      id: 4,
-      name: "Technology",
-      image: technology,
-    },
-  ];
-
+  const { categories } = useGetCategories();
   const { darkMode } = useContext(DarkModeContext);
   return (
     <div className={styles.explorePageCategoryContainer}>
@@ -49,9 +24,9 @@ function ExplorePageCategory() {
                   : styles.categoryContainer
               }
             >
-              <img src={category.image} className={styles.categoryImg} />
+              <img src={categories.image} className={styles.categoryImg} />
               <div className={styles.categoryAndExploreButton}>
-                <p className={styles.category}>{category.name}</p>
+                <p className={styles.category}>{categories.category}</p>
                 <button className={styles.exploreButton}>Explore</button>
               </div>
             </div>
