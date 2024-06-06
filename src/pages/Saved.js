@@ -5,7 +5,7 @@ import SavedNews from "../components/SavedNews";
 
 function Saved() {
   return (
-    <div>
+    <div style={{ overflowX: "hidden" }}>
       <Header />
       <SavedNews />
       <BottomNavbar activePage="Saved" />

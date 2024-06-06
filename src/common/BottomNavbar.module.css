@@ -1,5 +1,5 @@
 
-.navbar{
+.navbar, .darkmodeNavbar{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -11,14 +11,6 @@
     background-color: #dad9d9;
 }
 .darkmodeNavbar{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    bottom: 0;
-    position: fixed;
-    z-index: 100;
-    padding: 10px;
     background-color: white;
 }
 .navbarElements{
@@ -37,4 +29,19 @@
 }
 .icon{
     font-size: 1.5rem;
+}
+
+@media screen and (min-width: 600px) {
+    .navbar, .darkmodeNavbar{
+        padding: 4px;
+        gap: 10rem;
+        justify-content: center;
+    }
+    .icon{
+        font-size: 1.2rem;
+    }
+    .navbarText{
+        font-size: 0.9rem;
+    }
+    
 }

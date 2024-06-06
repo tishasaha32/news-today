@@ -11,7 +11,7 @@ function ExplorePageCategory() {
     <div className={styles.explorePageCategoryContainer}>
       <h3 className={styles.header}>Explore by Category</h3>
       <div className={styles.categoriesContainer}>
-        {categories.map((category) => (
+        {categories?.map((category) => (
           <Link
             to={`/category/${category.category.toLowerCase()}`}
             key={category.id}

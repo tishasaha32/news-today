@@ -78,3 +78,21 @@
     font-weight: bolder;
     text-decoration: underline;
 }
+
+@media screen and (min-width: 600px) {
+
+    .newsCards{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 80vw;
+        margin: auto;
+    }
+    .newsCard{
+        width: 40vw;
+        height: 55vh;
+        margin-bottom: 1rem;
+    }
+    .newsImage{
+        width: 30vw;
+    }
+}

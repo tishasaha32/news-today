@@ -15,6 +15,7 @@ import Profile from "./pages/Profile";
 import AddNews from "./pages/AddNews";
 import { auth } from "./components/firebase";
 import ProtectedRoute from "./ProtectedRoute";
+import Loading from "./common/Loading";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -31,7 +32,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (

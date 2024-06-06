@@ -14,7 +14,6 @@
     position: absolute;
     animation: linear infinite;
     animation-name: run;
-    /* animation-duration: 10s; */
 }
 @keyframes run {
     0% {
@@ -62,4 +61,21 @@
     position: absolute;
     z-index: 10;
     padding: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .storyModal{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .storyImage{
+        height: 100vh;
+        width: 40vw;
+    }
+    .storyBody{
+        width: 50vw;
+        right: 2rem;
+        font-size: 1.6rem;
+    }
 }

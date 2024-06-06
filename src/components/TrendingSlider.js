@@ -13,15 +13,29 @@ const TrendingSlider = ({ trendingNews }) => (
   >
     {trendingNews.map((item) => (
       <SwiperSlide key={item.id}>
-        <img src={item.imageUrl} className={styles.newsImage} />
-        <p className={styles.newsTitle}>{item.headline}:</p>
-        <p
-          className={styles.newsBody}
-          dangerouslySetInnerHTML={{ __html: item.body.slice(0, 250) + "..." }}
-        />
-        <Link to={`/news/${item.id}`}>
-          <span className={styles.readMore}>Read More</span>
-        </Link>
+        <div className={styles.newsCotainer}>
+          <div className={styles.newsImageContainer}>
+            <img src={item.imageUrl} className={styles.newsImage} />
+          </div>
+          <div className={styles.newsDetailsContainer}>
+            <p className={styles.newsTitle}>{item.headline}:</p>
+            <p
+              className={styles.newsBody}
+              dangerouslySetInnerHTML={{
+                __html: item.body.slice(0, 250) + "...",
+              }}
+            />
+            <p
+              className={styles.newsBodyLong}
+              dangerouslySetInnerHTML={{
+                __html: item.body.slice(0, 800) + "...",
+              }}
+            />
+            <Link to={`/news/${item.id}`}>
+              <span className={styles.readMore}>Read More</span>
+            </Link>
+          </div>
+        </div>
       </SwiperSlide>
     ))}
   </Swiper>

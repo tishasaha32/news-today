@@ -110,5 +110,8 @@
         width: 20dvw;
         height: 50dvh;
     }
+    .newsTitle{
+        font-size: 1.3rem;
+    }
     
 }

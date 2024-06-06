@@ -32,14 +32,14 @@ function StoryModal({
 
   return (
     <div className={styles.storyContainer} onClick={() => handleStorySwipe()}>
+      <div
+        key={timerKey}
+        className={styles.timer}
+        style={{ animationDuration: `${animationTime}s` }}
+      >
+        <hr className={styles.line}></hr>
+      </div>
       <div className={styles.storyModal}>
-        <div
-          key={timerKey}
-          className={styles.timer}
-          style={{ animationDuration: `${animationTime}s` }}
-        >
-          <hr className={styles.line}></hr>
-        </div>
         <img src={story.image} className={styles.storyImage} />
         <div className={styles.overlay}></div>
         <RxCross2

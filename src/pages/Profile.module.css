@@ -1,10 +1,4 @@
-.headerContainer{
-    display: flex;
-    align-items: center;
-}
-.backIcon{
-    margin-left: 1rem;
-}
+
 .userDetailsContainer{
     display: flex;
     flex-direction: column;
@@ -49,4 +43,11 @@
     border: none;
     font-weight: bold;
     letter-spacing: 0.2rem;
+}
+
+@media screen and (min-width: 600px) {
+    .userDetailsContainer{
+        width: 50vw;
+        margin: auto;
+    }
 }

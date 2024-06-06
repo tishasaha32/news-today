@@ -17,6 +17,9 @@
 .newsBody{
     padding: 1rem;
 }
+.newsBodyLong{
+    display: none;
+}
 .readMore{
     padding: 1rem 1rem 0 1rem;
     color: #4C71F0;
@@ -25,5 +28,29 @@
 }
 
 @media screen and (min-width: 600px) {
-    
+    .newsCotainer{
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+    }
+    .newsImageContainer{
+        width: 50vw;
+    }
+    .newsImage{
+        width: 50vw;
+        height: 100vh;
+        object-fit: cover;
+        object-position: center;
+    }
+    .newsTitle{
+        font-size: 2rem;
+    }
+    .newsBody{
+        display: none;
+    }
+    .newsBodyLong{
+        padding: 1rem;
+        display: block;
+        font-size: 1rem;
+    }
 }

@@ -36,3 +36,20 @@
     font-weight: bold;
     letter-spacing: 2px;
 }
+
+@media screen and (min-width: 600px) {
+    .input, .selectOption{
+        width: 60vw;
+    }
+    .reactQuill{
+        width: 60vw;
+    }
+    :global(.ql-container) {
+        height: 28vh;
+    }
+    .createButton{
+        width: 60vw;
+        bottom: 0;
+        margin: 1rem;
+    }
+}
