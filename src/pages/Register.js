@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Register.module.css";
 import { Link } from "react-router-dom";
-import lightmodeLogo from "../assets/logo/lightmodeLogo.png";
 import useHandleRegister from "../hooks/useHandleRegister";
 import SignInWithGoogle from "./SignInWithGoogle";
 
@@ -13,6 +12,9 @@ function Register() {
 
   const handleRegister = useHandleRegister();
 
+  const logo =
+    "https://firebasestorage.googleapis.com/v0/b/news-22cea.appspot.com/o/logo%2FNews%20Today%20Logo.png?alt=media&token=d79b5373-045a-4d25-bbad-04c95ee3157f";
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     handleRegister(email, password, fName, lname);
@@ -21,7 +23,7 @@ function Register() {
   return (
     <div className={styles.registerPageContainer}>
       <div className={styles.logoContainer}>
-        <img src={lightmodeLogo} alt="logo" className={styles.logo} />
+        <img src={logo} alt="logo" className={styles.logo} />
       </div>
       <form className={styles.registerDetailsContainer} onSubmit={handleSubmit}>
         <input

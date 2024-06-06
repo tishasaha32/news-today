@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
-import lightmodeLogo from "../assets/logo/lightmodeLogo.png";
 import { Link } from "react-router-dom";
 import useHandleLogin from "../hooks/useHandleLogin";
 import SignInWithGoogle from "./SignInWithGoogle";
@@ -14,11 +13,13 @@ function Login() {
     event.preventDefault();
     handleLogin(email, password);
   };
+  const logo =
+    "https://firebasestorage.googleapis.com/v0/b/news-22cea.appspot.com/o/logo%2FNews%20Today%20Logo.png?alt=media&token=d79b5373-045a-4d25-bbad-04c95ee3157f";
 
   return (
     <div className={styles.loginPageContainer}>
       <div className={styles.logoContainer}>
-        <img src={lightmodeLogo} alt="logo" className={styles.logo} />
+        <img src={logo} alt="logo" className={styles.logo} />
       </div>
       <form className={styles.loginContainer} onSubmit={handleSubmit}>
         <input
