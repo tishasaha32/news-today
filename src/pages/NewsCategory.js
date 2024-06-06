@@ -1,5 +1,5 @@
 import React from "react";
-import CategoryWiseNews from "../common/CategoryWiseNews";
+import CategoryWiseNews from "../components/CategoryWiseNews";
 import HeaderWithBackButton from "../common/HeaderWithBackButton";
 
 function NewsCategory() {

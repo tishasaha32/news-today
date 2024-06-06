@@ -1,8 +1,11 @@
+// src/NewsBodyPage.jsx
 import React, { useState, useEffect } from "react";
 import styles from "./NewsBodyPage.module.css";
 import { CiBookmark } from "react-icons/ci";
 import { FaBookmark } from "react-icons/fa";
 import useHandleSaveClick from "../hooks/useHandleSaveClick";
+import useHandleSummariseClick from "../hooks/useHandleSummariseClick";
+import AnimatedText from "./AnimatedText"; // Import the AnimatedText component
 
 function NewsBodyPage({ news }) {
   const id = window.location.pathname.split("/")[2];
@@ -16,6 +19,8 @@ function NewsBodyPage({ news }) {
   useEffect(() => {
     setNewsState({ ...news, id: id });
   }, [news]);
+
+  const { summary, summarizeNews } = useHandleSummariseClick(news);
 
   return (
     <div>
@@ -44,12 +49,18 @@ function NewsBodyPage({ news }) {
         <p className={styles.newsAuthor}>By {newsState.author}</p>
         <h2 className={styles.newsTitle}>{newsState.headline}</h2>
       </div>
-      <p
-        className={styles.newsBody}
-        dangerouslySetInnerHTML={{ __html: newsState.body }}
-      />
+      {summary ? (
+        <AnimatedText text={summary} speed={1} /> // Use AnimatedText component
+      ) : (
+        <p
+          className={styles.newsBody}
+          dangerouslySetInnerHTML={{ __html: newsState.body }}
+        />
+      )}
       <div className={styles.summarizeButtonContainer}>
-        <button className={styles.summarizeButton}>Summarize with GPT</button>
+        <button className={styles.summarizeButton} onClick={summarizeNews}>
+          Summarize with GPT
+        </button>
       </div>
     </div>
   );

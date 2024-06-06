@@ -1,6 +1,6 @@
 import React from "react";
 import useGetNews from "../hooks/useGetNews";
-import NewsBodyPage from "../common/NewsBodyPage";
+import NewsBodyPage from "../components/NewsBodyPage";
 import HeaderWithBackButton from "../common/HeaderWithBackButton";
 
 function News() {

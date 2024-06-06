@@ -72,9 +72,9 @@
     font-size: 0.8rem;
     color: blue;
 }
-.newsBody{
+.newsBody, .summary{
     padding: 1rem;
-}
+} 
 .summarizeButtonContainer{
     width: 100vw;
     display: flex;
