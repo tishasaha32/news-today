@@ -1,13 +1,13 @@
 import React from "react";
 import CategoryWiseNews from "../components/CategoryWiseNews";
-import HeaderWithBackButton from "../common/HeaderWithBackButton";
+import Header from "../common/Header";
 
 function NewsCategory() {
   const pathname = window.location.pathname;
   const category = pathname.split("/")[2];
   return (
     <div>
-      <HeaderWithBackButton />
+      <Header />
       <CategoryWiseNews category={category} />
     </div>
   );

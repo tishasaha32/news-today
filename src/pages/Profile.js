@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import useLogout from "../hooks/useLogout";
 import useFetchUserData from "../hooks/useFetchUserData";
-import HeaderWithBackButton from "../common/HeaderWithBackButton";
 import styles from "./Profile.module.css";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { DarkModeContext } from "../context/darkmodeContext";
 import Loading from "../common/Loading";
+import Header from "../common/Header";
 
 function Profile() {
   const userDetails = useFetchUserData();
@@ -17,7 +17,7 @@ function Profile() {
 
   return (
     <div>
-      <HeaderWithBackButton />
+      <Header />
       {userDetails ? (
         <div className={styles.userDetailsContainer}>
           {userDetails?.fname && (

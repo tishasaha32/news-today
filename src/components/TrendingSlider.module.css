@@ -2,6 +2,7 @@
     width: 100vw;
     height: 85vh; 
     overflow: hidden;
+    margin-top: 4.5rem;
 }
 .newsImage{
     width: 100vw;

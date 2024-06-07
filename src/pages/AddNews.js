@@ -2,7 +2,7 @@ import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import styles from "./AddNews.module.css";
-import HeaderWithBackButton from "../common/HeaderWithBackButton";
+import Header from "../common/Header";
 import { useAddNews } from "../hooks/useAddNews";
 
 function AddNews() {
@@ -24,7 +24,7 @@ function AddNews() {
 
   return (
     <div>
-      <HeaderWithBackButton />
+      <Header />
       <form className={styles.addNewsContainer} onSubmit={handleAddNews}>
         <input
           placeholder="Enter Headline"

@@ -1,7 +1,7 @@
 import React from "react";
 import useGetNews from "../hooks/useGetNews";
 import NewsBodyPage from "../components/NewsBodyPage";
-import HeaderWithBackButton from "../common/HeaderWithBackButton";
+import Header from "../common/Header";
 
 function News() {
   const pathname = window.location.pathname;
@@ -9,7 +9,7 @@ function News() {
   const { news } = useGetNews({ id });
   return (
     <div>
-      <HeaderWithBackButton />
+      <Header />
       <NewsBodyPage news={news} />
     </div>
   );

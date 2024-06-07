@@ -1,13 +1,28 @@
-.header{
+.header, .headerDark {
+    position: fixed;
+    background-color: white;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
     padding: 1rem;
+    z-index: 10;
+}
+
+.headerDark{
+    background-color: black;
+}
+.headerTitleContainer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
 }
 .headerIconsContainer{
     display: flex;
     gap: 1rem;
+    padding-right: 1rem;
 }
 .profilePhoto{
     width: 1.7rem;

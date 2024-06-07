@@ -7,6 +7,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { BiEdit } from "react-icons/bi";
 import { RiEditCircleFill } from "react-icons/ri";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
 
 import HeaderTitle from "./HeaderTitle";
 import { Link } from "react-router-dom";
@@ -16,8 +17,15 @@ function Header() {
   const { handleDarkMode, darkMode } = useContext(DarkModeContext);
   const userDetails = useFetchUserData();
   return (
-    <div className={styles.header}>
-      <HeaderTitle />
+    <div className={darkMode ? styles.headerDark : styles.header}>
+      <div className={styles.headerTitleContainer}>
+        <MdOutlineArrowBackIosNew
+          className={styles.backIcon}
+          onClick={() => window.history.back()}
+        />
+        <HeaderTitle />
+      </div>
+
       <div className={styles.headerIconsContainer}>
         {darkMode ? (
           <LuSunMoon onClick={() => handleDarkMode()} className={styles.icon} />

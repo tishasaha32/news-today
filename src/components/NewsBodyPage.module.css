@@ -1,3 +1,6 @@
+.newsContainer{
+    margin-top: 4.5rem;
+}
 .newsHeaderContainer{
     position: relative;
     width: 100vw;
@@ -98,7 +101,7 @@
 }
 
 @media screen and (min-width: 600px) {
-    .newsContainer{
+    .newsContainer, .newsContainerDark{
         display: flex;
         justify-content: center;
         gap: 1rem;
@@ -113,25 +116,26 @@
         flex-direction: column;
         justify-content: center;
         margin-bottom: 1rem;
-    margin: 1rem;
+        margin: 1rem;
     }
     .newsImage{
         height: 85vh;
         width: 50vw;
     }
     .newsBodyContainer{
+        position: absolute;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 1rem;
         overflow-x: hidden;
-        position: absolute;
         overflow-y: scroll;
         right: 0;
         top: 4rem;
         width: 45vw;
     }
+    
     .newsBodyContainer::-webkit-scrollbar{
         display: none;
     }
