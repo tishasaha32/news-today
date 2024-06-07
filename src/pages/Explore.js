@@ -6,7 +6,7 @@ import SearchBar from "../components/SearchBar";
 
 function Explore() {
   return (
-    <div>
+    <div style={{ overflowX: "hidden", height: "100vh" }}>
       <Header />
       <SearchBar />
       <ExplorePageCategory />

@@ -16,7 +16,7 @@ function Profile() {
   const { darkMode } = useContext(DarkModeContext);
 
   return (
-    <div>
+    <div style={{ overflowX: "hidden", height: "100vh" }}>
       <Header />
       {userDetails ? (
         <div className={styles.userDetailsContainer}>

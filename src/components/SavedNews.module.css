@@ -43,7 +43,9 @@
 
 
 @media screen and (min-width: 600px) {
-
+    .newsCard{
+        width: 55vw;
+    }
     .newsTitleLong{
         display: block;
         font-weight: bold;

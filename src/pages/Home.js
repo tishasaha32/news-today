@@ -6,7 +6,7 @@ import HomePageStories from "../components/HomePageStories";
 
 function Home() {
   return (
-    <div>
+    <div style={{ height: "100vh", overflowX: "hidden" }}>
       <Header />
       <HomePageStories />
       <HomePageCategory />

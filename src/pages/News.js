@@ -8,7 +8,7 @@ function News() {
   const id = pathname.split("/")[2];
   const { news } = useGetNews({ id });
   return (
-    <div>
+    <div style={{ overflowX: "hidden", height: "100vh" }}>
       <Header />
       <NewsBodyPage news={news} />
     </div>

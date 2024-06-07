@@ -36,12 +36,14 @@ function HomePageStories() {
         <p className={styles.discoverText}> Discover </p>
       </div>
       {stories.map((story) => (
-        <img
-          src={story.image}
-          className={styles.person}
-          key={story.id}
-          onClick={() => handleStoryClick(stories.indexOf(story))}
-        />
+        <div className={styles.person} key={story.id}>
+          <img
+            src={story.image}
+            className={styles.personImg}
+            key={story.id}
+            onClick={() => handleStoryClick(stories.indexOf(story))}
+          />
+        </div>
       ))}
       <div>
         {isModalOpen && (

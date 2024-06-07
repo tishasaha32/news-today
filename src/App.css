@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lumanosimo&family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -10,8 +8,6 @@
 .darkModeApp{
   background-color: black;
   color: white;
-  min-height: 100vh;
-  min-width: 100vw;
 }
 .lightModeApp{
   background-color: white;

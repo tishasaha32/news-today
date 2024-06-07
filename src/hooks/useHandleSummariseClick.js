@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { toast } from "react-toastify";
-
 function useHandleSummariseClick(news) {
   const [summary, setSummary] = useState("");
+  const [isSummarizing, setIsSummarizing] = useState(false);
 
   const summarizeNews = async () => {
-    if (!summary) {
-      toast.info("Summarizing news...", { autoClose: 7000 });
-    }
+    setIsSummarizing(true);
     const apiKey = "sk-proj-G5JaNXn8QGvRCKAM18GcT3BlbkFJdlXjfwkXTsBue5N4l5zb";
 
     try {
@@ -34,12 +31,13 @@ function useHandleSummariseClick(news) {
 
       const summary = response.data.choices[0].message.content;
       setSummary(summary);
+      setIsSummarizing(false);
     } catch (error) {
       console.error("Error summarizing news:", error);
     }
   };
 
-  return { summary, summarizeNews };
+  return { summary, summarizeNews, isSummarizing };
 }
 
 export default useHandleSummariseClick;

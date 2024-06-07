@@ -4,13 +4,11 @@ import { CiBookmark } from "react-icons/ci";
 import { FaBookmark } from "react-icons/fa";
 import useHandleSaveClick from "../hooks/useHandleSaveClick";
 import useHandleSummariseClick from "../hooks/useHandleSummariseClick";
-import AnimatedText from "./AnimatedText"; // Import the AnimatedText component
-import { DarkModeContext } from "../context/darkmodeContext";
-
+import AnimatedText from "./AnimatedText";
+import SummarizingLoader from "./SummarizingLoader";
 function NewsBodyPage({ news }) {
   const id = window.location.pathname.split("/")[2];
   const [newsState, setNewsState] = useState({ ...news, id: id });
-
   const { handleSaveClick } = useHandleSaveClick({
     news: newsState,
     setNewsState,
@@ -20,8 +18,8 @@ function NewsBodyPage({ news }) {
     setNewsState({ ...news, id: id });
   }, [news]);
 
-  const { summary, summarizeNews } = useHandleSummariseClick(news);
-  const { darkMode } = useContext(DarkModeContext);
+  const { summary, summarizeNews, isSummarizing } =
+    useHandleSummariseClick(news);
 
   return (
     <div className={styles.newsContainer}>
@@ -51,18 +49,21 @@ function NewsBodyPage({ news }) {
         <h2 className={styles.newsTitle}>{newsState.headline}</h2>
       </div>
       <div className={styles.newsBodyContainer}>
-        {summary ? (
-          <AnimatedText text={summary} speed={1} />
-        ) : (
+        {!summary && !isSummarizing && (
           <p
             className={styles.newsBody}
             dangerouslySetInnerHTML={{ __html: newsState.body }}
           />
         )}
+        {summary && <AnimatedText text={summary} speed={1} />}
         <div className={styles.summarizeButtonContainer}>
-          <button className={styles.summarizeButton} onClick={summarizeNews}>
-            Summarize with GPT
-          </button>
+          {!summary && isSummarizing ? (
+            <SummarizingLoader />
+          ) : (
+            <button className={styles.summarizeButton} onClick={summarizeNews}>
+              Summarize with GPT
+            </button>
+          )}
         </div>
       </div>
     </div>

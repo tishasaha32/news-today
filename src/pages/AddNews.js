@@ -23,7 +23,7 @@ function AddNews() {
   } = useAddNews();
 
   return (
-    <div>
+    <div style={{ overflowX: "hidden", height: "100vh" }}>
       <Header />
       <form className={styles.addNewsContainer} onSubmit={handleAddNews}>
         <input
