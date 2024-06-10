@@ -1,0 +1,46 @@
+.newsBody, .summary{
+    padding: 1rem;
+} 
+.summarizeButtonContainer{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+.summarizeButton{
+    background: -webkit-linear-gradient(225deg, rgb(251, 175, 21), rgb(251, 21, 242),rgb(21, 198, 251)) 0% 0% / 300% 300%;
+    animation: gradient_move 3s ease infinite;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.speakButton{
+    color: #4C71F0;
+    margin-left: 90vw;
+    font-size: 1.5rem;
+}
+@keyframes gradient_move {
+    0%{background-position: 0% 92%}
+    50%{background-position: 100% 9%}
+    100%{background-position: 0% 92%}
+}
+
+@media screen and (min-width: 600px) {
+    .newsBodyContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 4rem;
+    }
+    .speakButton{
+        position: absolute;
+        top: 4.5rem;
+        right: 2rem;
+        font-size: 1.5rem;
+    }
+    
+}

@@ -19,7 +19,7 @@ const AnimatedText = ({ text, speed = 50 }) => {
     setIndex(0);
   }, [text]);
 
-  return <p style={{ padding: "1rem" }}>{displayedText}</p>;
+  return <p style={{ padding: "1rem", paddingTop: "2rem" }}>{displayedText}</p>;
 };
 
 export default AnimatedText;

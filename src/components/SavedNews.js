@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./SavedNews.module.css";
 import useGetCategoryNews from "../hooks/useGetCategoryNews";
 
-function SavedNews() {
-  const { savedNews } = useGetCategoryNews();
+function SavedNews({ savedNews }) {
   return (
     <div className={styles.newsCards}>
       {savedNews.map((item) => {

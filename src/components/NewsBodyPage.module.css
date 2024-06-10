@@ -1,7 +1,7 @@
 .newsContainer{
     margin-top: 4.5rem;
 }
-.newsHeaderContainer{
+.newsImageContainer{
     position: relative;
     width: 100vw;
     height: 45vh;
@@ -73,41 +73,11 @@
     color: white;
     padding: 1rem;
     font-size: 0.8rem;
-    color: blue;
-}
-.newsBody, .summary{
-    padding: 1rem;
-} 
-.summarizeButtonContainer{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 1rem;
-}
-.summarizeButton{
-    background: -webkit-linear-gradient(225deg, rgb(251, 175, 21), rgb(251, 21, 242),rgb(21, 198, 251)) 0% 0% / 300% 300%;
-    animation: gradient_move 3s ease infinite;
-    color: white;
-    padding: 1rem;
-    border-radius: 8px;
-    border: none;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-@keyframes gradient_move {
-    0%{background-position: 0% 92%}
-    50%{background-position: 100% 9%}
-    100%{background-position: 0% 92%}
 }
 
 @media screen and (min-width: 600px) {
     .newsContainer, .newsContainerDark{
-        /* display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 90vw; */
-        /* max-width: 100vw; */
         padding-left: 55vw;
-        
     }
     .newsHeaderContainer{
         position: fixed;
@@ -124,12 +94,5 @@
     .newsImage{
         height: 85vh;
         width: 50vw;
-    }
-    .newsBodyContainer{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        top: 4rem;
     }
 }

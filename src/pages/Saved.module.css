@@ -1,0 +1,19 @@
+.nothingSavedImageContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100vw;
+}
+.nothingSavedImage{
+    width: 85vw;
+    object-fit: contain;
+}
+
+@media screen and (min-width: 600px) {
+    .nothingSavedImage{
+        width: 25vw;
+        height: 50vh;
+    }
+}

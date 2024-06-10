@@ -6,6 +6,7 @@
     justify-content: center;
     gap: 1rem;
     padding-bottom: 1rem;
+    margin-top: 4.5rem;
 }
 .newsCard{
     display: flex;
@@ -86,6 +87,7 @@
         grid-template-columns: 1fr 1fr;
         width: 80vw;
         margin: auto;
+        margin-top: 4.5rem;
     }
     .newsCard{
         width: 40vw;
