@@ -1,5 +1,6 @@
 .newsBody, .summary{
     padding: 1rem;
+    padding-top: 50vh;
 } 
 .summarizeButtonContainer{
     width: 100vw;
@@ -42,5 +43,8 @@
         right: 2rem;
         font-size: 1.5rem;
     }
-    
+    .newsBody, .summary{
+        padding: 1rem;
+        padding-top: 0;
+    }
 }
