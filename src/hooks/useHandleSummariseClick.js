@@ -6,7 +6,8 @@ function useHandleSummariseClick(news) {
 
   const summarizeNews = async () => {
     setIsSummarizing(true);
-    const apiKey = "sk-proj-G5JaNXn8QGvRCKAM18GcT3BlbkFJdlXjfwkXTsBue5N4l5zb";
+    const apiKey = process.env.REACT_APP_OPENAI_API;
+    console.log(process.env.REACT_APP_OPENAI_API);
 
     try {
       const response = await axios.post(
