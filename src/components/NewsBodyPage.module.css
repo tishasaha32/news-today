@@ -13,7 +13,7 @@
 .newsImage{
     position: fixed;
     width: 100vw;
-    height: 45vh;
+    height: 40vh;
     object-fit: cover;
     object-position: center top;
 }
@@ -24,7 +24,7 @@
     right: 0; 
     bottom: 0; 
     width: 100%;
-    height: 55vh;
+    height: 50vh ;
     background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
     z-index: 1; 
 }
@@ -32,7 +32,7 @@
     position: absolute;
     top: 3vh;
     right: 2vh;
-    z-index: 2;
+    z-index: 10;
     background-color: #4C71F0;
     display: flex;
     justify-content: center;
@@ -96,9 +96,9 @@
         height: 85vh;
         width: 50vw;
     }
-    .overlay{
+    /* .overlay{
         height: 100%
-    }
+    } */
     .newsTitle{
         top: 70%;
         bottom: 3vh;

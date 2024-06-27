@@ -1,6 +1,9 @@
+
+.newsBodyContainer{
+    padding-top: 43vh;
+}
 .newsBody, .summary{
     padding: 1rem;
-    padding-top: 50vh;
 } 
 .summarizeButtonContainer{
     width: 100vw;
