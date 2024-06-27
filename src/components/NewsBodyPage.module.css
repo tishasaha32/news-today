@@ -96,9 +96,9 @@
         height: 85vh;
         width: 50vw;
     }
-    /* .overlay{
+    .overlay{
         height: 100%
-    } */
+    }
     .newsTitle{
         top: 70%;
         bottom: 3vh;
